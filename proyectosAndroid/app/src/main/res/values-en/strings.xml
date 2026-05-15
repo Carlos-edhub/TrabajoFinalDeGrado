@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MiAplicacion</string>
+    <string name="Bienvenido">Welcome to an app where you earn money by helping others</string>
+    <string name="btnServicio">I need a service</string>
+    <string name="btnTrabaja">Work with us</string>
+    <string name="btnRegistrarse">Sign up</string>
+    <string name="btnSolicitarServicio">Request service</string>
+</resources>

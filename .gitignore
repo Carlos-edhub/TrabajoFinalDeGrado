@@ -1,0 +1,33 @@
+# Android
+proyectosAndroid/.gradle/
+proyectosAndroid/build/
+proyectosAndroid/app/build/
+proyectosAndroid/local.properties
+proyectosAndroid/.idea/
+*.iml
+*.hprof
+*.keystore
+!helplingapp.keystore
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node
+landing-page/node_modules/
+landing-page/dist/
+
+# Temp
+C:\Users\carlo\AppData\Local\Temp\opencode\
+
+# Generated images (source is the Python script)
+imagenes_tfg/
+
+# Backups
+*_backup.*

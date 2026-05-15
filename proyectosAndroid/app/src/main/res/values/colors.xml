@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Paleta de alto contraste para personas mayores -->
+    <color name="primary">#0055CC</color><!-- Azul más oscuro y legible -->
+    <color name="primary_dark">#003D99</color>
+    <color name="on_primary">#FFFFFF</color>
+
+    <color name="secondary">#1E8E3E</color><!-- Verde más oscuro -->
+    <color name="secondary_dark">#156B2E</color>
+    <color name="on_secondary">#FFFFFF</color>
+
+    <color name="background">#F5F5F7</color><!-- Fondo claro -->
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_container">#F0F0F2</color>
+    <color name="on_surface">#000000</color><!-- Negro puro para máximo contraste -->
+    <color name="on_surface_variant">#3A3A3C</color><!-- Gris más oscuro -->
+
+    <color name="error">#D92D20</color><!-- Rojo más intenso -->
+    <color name="on_error">#FFFFFF</color>
+
+    <color name="card_background">#FFFFFF</color>
+    <color name="divider">#C6C6C8</color>
+
+    <color name="text_primary">#000000</color>
+    <color name="text_secondary">#3A3A3C</color>
+
+    <color name="btn_emergency">#CC2D20</color>
+    <color name="btn_emergency_text">#FFFFFF</color>
+</resources>

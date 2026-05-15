@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Helping a GrandPa!</string>
+    <string name="Bienvenido">App de cuidados para personas mayores</string>
+    <string name="btnServicio">Necesito un servicio</string>
+    <string name="btnTrabaja">Trabaja con nosotros</string>
+    <string name="btnRegistrarse">Registrarse</string>
+    <string name="btnSolicitarServicio">Solicitar servicio</string>
+    <string name="sos_emergencia">SOS EMERGENCIA</string>
+</resources>

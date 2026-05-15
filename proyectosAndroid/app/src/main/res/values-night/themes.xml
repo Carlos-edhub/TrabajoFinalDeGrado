@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Base.Theme.MiAplicacion" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorPrimaryContainer">#1A3A6E</item>
+        <item name="colorOnPrimaryContainer">#99BBFF</item>
+
+        <item name="colorSecondary">#4CD964</item>
+        <item name="colorOnSecondary">@color/on_secondary</item>
+
+        <item name="android:colorBackground">#0D0D12</item>
+        <item name="colorSurface">#1C1C1E</item>
+        <item name="colorOnSurface">#F2F2F7</item>
+        <item name="colorOnSurfaceVariant">#A1A1A6</item>
+
+        <item name="colorError">#FF453A</item>
+        <item name="colorOnError">#FFFFFF</item>
+    </style>
+
+    <style name="Theme.MiAplicacion" parent="Base.Theme.MiAplicacion" />
+
+    <style name="Theme.MiAplicacion.Anim" parent="Theme.MiAplicacion" />
+
+    <style name="Theme.MiAplicacion.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">#1A1A2E</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+        <item name="postSplashScreenTheme">@style/Theme.MiAplicacion</item>
+    </style>
+</resources>
