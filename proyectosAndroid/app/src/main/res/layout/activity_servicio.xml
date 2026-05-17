@@ -67,33 +67,36 @@
 
         <EditText
             android:id="@+id/horasMedicas"
-            android:layout_width="120dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             android:autofillHints="number"
             android:contentDescription="Horas para cita médica"
-            android:ems="5"
             android:fontFamily="sans-serif"
             android:hint="Horas"
             android:inputType="number"
             android:minHeight="48dp"
             android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/imageView4"
+            app:layout_constraintEnd_toStartOf="@+id/fechaMedicas"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
         <EditText
             android:id="@+id/fechaMedicas"
-            android:layout_width="140dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
             android:autofillHints="date"
             android:contentDescription="Fecha para cita médica"
-            android:ems="8"
             android:fontFamily="sans-serif"
             android:hint="Fecha (dd/mm/aaaa)"
             android:inputType="date"
             android:minHeight="48dp"
             android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="@+id/imageView4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/horasMedicas"
             app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
         <!-- Separador -->
@@ -135,33 +138,36 @@
 
         <EditText
             android:id="@+id/horasCompras"
-            android:layout_width="120dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             android:autofillHints="number"
             android:contentDescription="Horas para compras"
-            android:ems="5"
             android:fontFamily="sans-serif"
             android:hint="Horas"
             android:inputType="number"
             android:minHeight="48dp"
             android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/imageView5"
+            app:layout_constraintEnd_toStartOf="@+id/fechaCompras"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
         <EditText
             android:id="@+id/fechaCompras"
-            android:layout_width="140dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
             android:autofillHints="date"
             android:contentDescription="Fecha para compras"
-            android:ems="8"
             android:fontFamily="sans-serif"
             android:hint="Fecha (dd/mm/aaaa)"
             android:inputType="date"
             android:minHeight="48dp"
             android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="@+id/imageView5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/horasCompras"
             app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
         <!-- Precio y total -->
@@ -197,17 +203,31 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/precioHora" />
 
+        <TextView
+            android:id="@+id/txtTotalCalculado"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Total: 0,00 €"
+            android:textColor="@color/primary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+
         <Button
             android:id="@+id/btnSolicitarServicio"
             style="@style/AccesibleButton"
             android:layout_width="0dp"
             android:layout_height="80dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:contentDescription="Solicitar servicio"
             android:text="Solicitar servicio"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+            app:layout_constraintTop_toBottomOf="@+id/txtTotalCalculado" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

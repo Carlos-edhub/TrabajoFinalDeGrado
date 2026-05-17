@@ -51,6 +51,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tituloSos" />
 
         <TextView
+            android:id="@+id/lblInfoSos"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -73,16 +74,16 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnActivarSos" />
+            app:layout_constraintTop_toBottomOf="@+id/lblInfoSos" />
 
         <Button
             android:id="@+id/btnAgregarContacto"
             style="@style/AccesibleButton"
             android:layout_width="0dp"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:minWidth="0dp"
             android:text="+ Añadir contacto"
-            android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lblContactos" />

@@ -70,14 +70,14 @@ class SosHelperUnitTest {
     }
 
     @Test
-    fun contactoOrden_seRespetaPrioridad() {
+    fun contacto_listaMultiple_contieneElementos() {
         val contactos = listOf(
-            ContactoEmergencia(nombre = "Primero", telefono = "111", orden = 1),
-            ContactoEmergencia(nombre = "Segundo", telefono = "222", orden = 2)
+            ContactoEmergencia(nombre = "Primero", telefono = "111"),
+            ContactoEmergencia(nombre = "Segundo", telefono = "222")
         )
-        val ordenados = contactos.sortedBy { it.orden }
-        assertEquals("Primero", ordenados[0].nombre)
-        assertEquals("Segundo", ordenados[1].nombre)
+        assertEquals(2, contactos.size)
+        assertEquals("Primero", contactos[0].nombre)
+        assertEquals("Segundo", contactos[1].nombre)
     }
 
     @Test

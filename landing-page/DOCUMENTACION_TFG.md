@@ -2,7 +2,7 @@
 
 **Trabajo Fin de Grado**
 
-**Autor:** Carlos Alfaro García
+**Autor:** Carlos Daniel Cárdenas Beltrán
 **Titulación:** Desarrollo de Aplicaciones Multiplataforma
 
 ---

@@ -25,6 +25,13 @@ class LoginActivity : AppCompatActivity() {
         SessionManager.init(this)
         db = AppDatabase.getInstance(this)
 
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        binding.toolbar.setNavigationOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+
         binding.btnLogin.setOnClickListener {
             iniciarSesion()
         }

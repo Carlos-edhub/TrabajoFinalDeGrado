@@ -1,7 +1,9 @@
 package com.example.miaplicacion
 
-import android.content.Intent
+import android.app.AlertDialog
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -43,6 +45,16 @@ class ServicioActivity : AppCompatActivity() {
             showDatePicker { date -> binding.fechaCompras.setText(date) }
         }
 
+        binding.editTextNumber.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: Editable?) {
+                val horas = s?.toString()?.toIntOrNull() ?: 0
+                val total = horas * precioBase
+                binding.txtTotalCalculado.text = "Total: %.2f €".format(total)
+            }
+        })
+
         ViewCompat.setOnApplyWindowInsetsListener(binding.textArea) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -55,10 +67,11 @@ class ServicioActivity : AppCompatActivity() {
         val horasComprasStr = binding.horasCompras.text?.toString() ?: ""
         val fechaMedicas = binding.fechaMedicas.text?.toString()?.trim() ?: ""
         val fechaCompras = binding.fechaCompras.text?.toString()?.trim() ?: ""
+        val horasEditadas = binding.editTextNumber.text?.toString()?.toIntOrNull() ?: 0
 
         val horasMedicas = horasMedicasStr.toIntOrNull() ?: 0
         val horasCompras = horasComprasStr.toIntOrNull() ?: 0
-        val totalHoras = horasMedicas + horasCompras
+        val totalHoras = if (horasEditadas > 0) horasEditadas else horasMedicas + horasCompras
 
         if (totalHoras <= 0) {
             Toast.makeText(this, "Indica al menos 1 hora para algún servicio", Toast.LENGTH_LONG).show()
@@ -88,16 +101,41 @@ class ServicioActivity : AppCompatActivity() {
                 binding.fechaCompras.text?.clear()
                 binding.editTextNumber.text?.clear()
 
-                val mensaje = """
-                    Servicio solicitado:
-                    - Citas médicas: $horasMedicas h
-                    - Compras: $horasCompras h
-                    Total: $totalHoras h → %.2f €
-                """.trimIndent().format(total)
-
-                Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show()
+                mostrarFactura(servicio)
             }
         }.start()
+    }
+
+    private fun mostrarFactura(servicio: ServicioHistorial) {
+        val factura = """
+            ═══════════════════════════════
+                     FACTURA SERVICIO
+            ═══════════════════════════════
+
+            Fecha: ${servicio.fechaSolicitud}
+
+            ───────────────────────────────
+            Citas médicas:
+              Horas: ${servicio.horasMedicas}h
+              Fecha: ${servicio.fechaMedicas}
+
+            Compras supermercado:
+              Horas: ${servicio.horasCompras}h
+              Fecha: ${servicio.fechaCompras}
+            ───────────────────────────────
+
+            Precio por hora: %.2f €
+            Total horas: %d h
+
+            TOTAL A PAGAR: %.2f €
+            ═══════════════════════════════
+        """.trimIndent().format(precioBase, servicio.totalHoras, servicio.totalPrecio)
+
+        AlertDialog.Builder(this)
+            .setTitle("Factura")
+            .setMessage(factura)
+            .setPositiveButton("Aceptar", null)
+            .show()
     }
 
     private fun showDatePicker(onDateSelected: (String) -> Unit) {

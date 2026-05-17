@@ -8,7 +8,7 @@
 
 **Título:** Desarrollo de una aplicación Android para el cuidado y acompañamiento de personas mayores
 
-**Autor:** Carlos Alfaro García
+**Autor:** Carlos Daniel Cárdenas Beltrán
 
 **Titulación:** Desarrollo de Aplicaciones Multiplataforma
 

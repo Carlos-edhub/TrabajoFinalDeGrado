@@ -124,7 +124,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, BaseDatosHelpingAgP::class.java))
         }
 
-        binding.txtLogout.setOnClickListener {
+        binding.btnLogout.setOnClickListener {
             SessionManager.logout()
             Toast.makeText(this, "Sesión cerrada", Toast.LENGTH_LONG).show()
             actualizarUI()
@@ -143,7 +143,7 @@ class MainActivity : AppCompatActivity() {
             binding.txtWelcome.text = "Bienvenido, $nombre"
             binding.txtWelcome.visibility = android.view.View.VISIBLE
             binding.barraLogin.visibility = android.view.View.GONE
-            binding.txtLogout.visibility = android.view.View.VISIBLE
+            binding.btnLogout.visibility = android.view.View.VISIBLE
             binding.txtRegistrarMayor.visibility = android.view.View.VISIBLE
             binding.txtHistorial.visibility = android.view.View.VISIBLE
             binding.cardRegistroTexto.text = "Mi Perfil"
@@ -151,7 +151,7 @@ class MainActivity : AppCompatActivity() {
         } else {
             binding.txtWelcome.visibility = android.view.View.GONE
             binding.barraLogin.visibility = android.view.View.VISIBLE
-            binding.txtLogout.visibility = android.view.View.GONE
+            binding.btnLogout.visibility = android.view.View.GONE
             binding.txtRegistrarMayor.visibility = android.view.View.GONE
             binding.txtHistorial.visibility = android.view.View.GONE
             binding.cardRegistroTexto.text = "Crear cuenta"

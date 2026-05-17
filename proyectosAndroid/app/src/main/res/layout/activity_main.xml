@@ -68,6 +68,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!-- Barrier that follows whichever top bar is visible -->
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/topBarrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:barrierAllowsGoneWidgets="false"
+            app:constraint_referenced_ids="barraLogin,txtWelcome" />
+
         <!-- Logo -->
         <ImageView
             android:id="@+id/imageView"
@@ -78,7 +87,7 @@
             android:src="@drawable/abuelitosfelices"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/barraLogin" />
+            app:layout_constraintTop_toBottomOf="@+id/topBarrier" />
 
         <!-- Title -->
         <TextView
@@ -580,6 +589,20 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
+        <!-- Logout Button -->
+        <Button
+            android:id="@+id/btnLogout"
+            style="@style/AccesibleButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:minWidth="0dp"
+            android:text="Cerrar sesión"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardFamilia" />
+
         <!-- Footer links -->
         <TextView
             android:id="@+id/txtRegistrarMayor"
@@ -596,7 +619,7 @@
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardFamilia" />
+            app:layout_constraintTop_toBottomOf="@+id/btnLogout" />
 
         <TextView
             android:id="@+id/txtAcercaDe"
@@ -646,23 +669,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtHistorial" />
-
-        <TextView
-            android:id="@+id/txtLogout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:padding="6dp"
-            android:text="Cerrar sesión"
-            android:textColor="@color/error"
-            android:textSize="13sp"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtOficina" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
