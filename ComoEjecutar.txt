@@ -1,0 +1,50 @@
+============================================================
+  CÓMO EJECUTAR EL PROYECTO
+  Helping a GrandPa! - TFG Carlos Daniel Cárdenas Beltrán
+============================================================
+
+REPOSITORIO:
+  https://github.com/Carlos-edhub/TrabajoFinalDeGrado
+
+------------------------------------------------------------
+APP ANDROID
+------------------------------------------------------------
+Requisitos:
+  - Android Studio (descargar de developer.android.com/studio)
+  - Móvil Android con depuración USB o emulador
+
+Pasos:
+  1. Abre Android Studio
+  2. File → Open → selecciona la carpeta "proyectosAndroid"
+  3. Espera a que Gradle sincronice (descarga dependencias solo la
+     primera vez)
+  4. Conecta tu móvil por USB (con depuración USB activada) o
+     usa el emulador incluido
+  5. Pulsa el triángulo verde ▶ Run (o Mayús + F10)
+  6. La app se compilará e instalará automáticamente
+
+  Alternativa: el APK se genera en:
+    proyectosAndroid/app/build/outputs/apk/debug/app-debug.apk
+
+------------------------------------------------------------
+LANDING PAGE (WEB)
+------------------------------------------------------------
+Requisitos:
+  - Node.js 18 o superior (descargar de nodejs.org)
+  - NPM (viene con Node.js)
+
+Pasos:
+  1. Abre una terminal (PowerShell / CMD)
+  2. Navega a la carpeta:
+       cd ruta\del\proyecto\landing-page
+  3. Instala dependencias (solo la primera vez):
+       npm install
+  4. Inicia el servidor de desarrollo:
+       npm run dev
+  5. Abre en tu navegador: http://localhost:5173
+
+  Para la versión de producción:
+       npm run build
+       npm run preview
+
+============================================================
